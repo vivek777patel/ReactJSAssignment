@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Home Page</title>
+<script src="resources/js/react.min.js"></script>
+<script src="resources/js/react-dom.min.js"></script>
+<script src="resources/js/browser.min.js"></script>
+<script src="resources/js/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" href="resources/css/style.css" type="text/css">
+</head>
+<body>
+	<h1>Hello World</h1>
+	<div id="container"></div>
+	<script type="text/babel">
+          console.log('Context Path '+window.location.href);
+          var url = window.location.href;
+
+          var Board = React.createClass({
+             getInitialState: function(){
+               return {
+                   comments: []
+               }
+             },
+              add: function(text){
+                  var arr = this.state.comments;
+                  arr.push(text);
+                  this.setState({comments: arr});
+              },
+              /*removeComment: function(i){
+                  var arr = this.state.comments;
+                  arr.splice(i,1);
+                  this.setState({comment: arr});
+              },*/
+              updateComment: function(newText,i){
+                  var arr = this.state.comments;
+                  arr[i] = newText;
+                  this.setState({comments: arr});
+              },
+              getArray: function(){
+                  var arr = this.state.comments;
+                  return arr;
+              },
+              setArray: function(arr){
+                  this.setState({comments: arr});
+              },
+              eachComment: function(text,i){
+                  return (<Comment key={i} index={i} setArray={this.setArray} getArray={this.getArray} updateCommentText={this.updateComment} deleteCommentText={this.removeComment}>
+                          {text}
+                        </Comment>);
+              },
+              render: function(){
+                return(
+                <div>
+                    <button onClick={this.add.bind(null,'SS')} className="button-info create">Add New</button>
+                    <div className="board">
+                        {this.state.comments.map(this.eachComment)}
+                    </div>
+                </div>
+
+                )
+              },
+          });
+		  var Comment = React.createClass({
+            getInitialState: function(){
+                return {editing: false}
+            },
+            save: function(){
+                //this.props.updateCommentText(this.refs.newText.value, this.props.index);
+                this.updateComment();
+                this.setState({editing:false});
+            },
+            edit: function(){
+                this.setState({editing: true});
+            },
+            remove: function(){
+                this.props.deleteCommentText(this.props.index);
+            },
+            deleteItem: function(){
+                var arr = this.props.getArray();
+                var i = this.props.index;
+                arr.splice(i,1);
+                this.props.setArray(arr);
+            },
+            updateComment: function(){
+                var arr = this.props.getArray();
+                var i = this.props.index;
+                arr[i] = this.refs.newText.value;0
+                this.props.setArray(arr);
+            },
+            renderNormal: function(){
+                return (
+                    <div className="commentContainer">
+                        <div className="commentText">{this.props.children}</div>
+                        <button onClick={this.edit} className="button-primary">Edit</button>
+                        <button onClick={this.deleteItem} className="button-danger">Remove</button>
+                    </div>
+                );
+            },
+            renderForm: function(){
+                return (
+                    <div className="commentContainer">
+                        <textarea ref="newText" defaultValue={this.props.children}></textarea>
+                        <button onClick={this.save} className="button-primary">Save</button>
+                    </div>
+                );
+            },
+            render: function(){
+              if(this.state.editing){
+                  return this.renderForm();
+              }
+                else{
+                    return this.renderNormal();
+                }
+            }
+          });
+            
+            ReactDOM.render(
+                <Board />,document.getElementById('container')
+            );
+
+        </script>
+
+</body>
+</html>
