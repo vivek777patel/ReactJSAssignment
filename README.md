@@ -31,8 +31,12 @@ to run application.
 Have uploaded screen-cast video in the root directory which demonstrate My Single Page Blog Application.
 
 1) Blog-ApplicationDemonstration.mp4 -- Will showcase the Blog Application (Assignment-4).
+
 Also, the same video is on YouTube
+
   https://youtu.be/I_M--LBZxvI
+  
 Also, I have created one more video which showcase the initial setup of React application. Have uploaded it on YouTube.
+
   https://youtu.be/lajmNnqfhG4
 
