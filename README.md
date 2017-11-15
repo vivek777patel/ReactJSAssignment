@@ -28,9 +28,11 @@ Once your application is completed, use
 
 to run application.
 
-Have uploaded two screen-cast videos in the root directory.
+Have uploaded screen-cast video in the root directory which demonstrate My Single Page Blog Application.
 
-1) ReactAppSetup.mp4 -- Will showcase the steps to setup a simple React Application
-2) Blog-ApplicationDemonstration.mp4 -- Will showcase the Blog Application (Assignment-4).
-
+1) Blog-ApplicationDemonstration.mp4 -- Will showcase the Blog Application (Assignment-4).
+Also, the same video is on YouTube
+  https://youtu.be/I_M--LBZxvI
+Also, I have created one more video which showcase the initial setup of React application. Have uploaded it on YouTube.
+  https://youtu.be/lajmNnqfhG4
 
