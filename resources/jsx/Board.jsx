@@ -5,7 +5,17 @@ var createReactClass = require('create-react-class');
 var Board = React.createClass({
     getInitialState: function(){
       return {
-        comments: [],
+        comments: [
+          {
+            detailComment: 'My Third Post', title: 'Third Post',postTime: new Date().toLocaleString()
+          },
+          {
+            detailComment: 'My Second Post', title: 'Second Post',postTime: new Date().toLocaleString()
+          },
+          {
+            detailComment: 'My First Post', title: 'First Post',postTime: new Date().toLocaleString()
+          }
+        ],
         newTitle:'',
         newComment:''
       }
