@@ -19,6 +19,8 @@ Open Command Prompt as an Administrator and follow along the below steps.
   --> npm install react react-dom --save
 
   --> npm install create-react-class
+  
+  --> npm install --save react-router-dom
 
 All the above commands will help to create simple Single page application.
 
