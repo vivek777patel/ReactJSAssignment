@@ -1,7 +1,14 @@
 var createReactClass = require('create-react-class');
 var Greeting = createReactClass({
   render: function() {
-    return <h1>Hello, {this.props.name}</h1>;
+    return (
+      <div>
+        <h1>Hello, Vivek</h1>
+        <p>
+          Welcome to MyBlog site.
+        </p>
+      </div>
+      );
   }
 });
 export default Greeting;
